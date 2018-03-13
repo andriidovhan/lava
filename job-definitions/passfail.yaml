@@ -12,4 +12,4 @@ parse:
     pattern: '(?P<test_case_id>.*-*)\s+:\s+(?P<result>(Sample|samp))'
     fixupdict:
         Sample: pass
-				samp: fail
+        samp: fail
