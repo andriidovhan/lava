@@ -6,7 +6,7 @@ metadata:
 
 run:
     steps:
-       - ./dummy-test.sh
+       - ./test.sh
 
 parse:
     pattern: '(?P<test_case_id>.*-*)\s+:\s+(?P<result>(Sample|samp))'
