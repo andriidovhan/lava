@@ -47,10 +47,10 @@ actions:
     method: u-boot
     commands: nfs
     auto_login:
-      login_prompt: 'login:'
+      login_prompt: 'beaglebone login:'
       username: root
     prompts:
-    - 'root@jessie:'
+    - 'root@beaglebone:~#'
     timeout:
       minutes: 2
 
