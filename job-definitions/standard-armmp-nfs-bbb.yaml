@@ -44,15 +44,15 @@ actions:
       url: http://images.validation.linaro.org/snapshots.linaro.org/components/lava/standard/debian/jessie/armhf/4/dtbs/am335x-boneblack.dtb
 
 - boot:
- #   method: u-boot
- #   commands: nfs
+    method: u-boot
+    commands: nfs
     auto_login:
-      login_prompt: 'beaglebone login:'
-      username: root
+      login_prompt: " beaglebone login:"
+      username: "root"
     prompts:
-    - 'root@beaglebone:~#'
+    - "root@beaglebone:~#"
     timeout:
-      minutes: 2
+      minutes: 1
 
 - test:
     timeout:
