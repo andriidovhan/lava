@@ -3,6 +3,12 @@ metadata:
     format: "Lava-Test-Shell Test Definition 1.0"
     description: "Pass/Fail test."
     version: 1.0
+- boot:
+    auto_login:
+      login_prompt: "beaglebone login:"
+      username: "root"
+    prompts:
+    - "root@beaglebone:~#"
 
 run:
     steps:
