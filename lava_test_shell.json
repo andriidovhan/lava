@@ -1,0 +1,25 @@
+{
+    "actions": [
+        {
+            "command": "lava_test_shell",
+            "parameters": {
+                "testdef_repos": [
+                    {
+                        "git-repo": "git://git.linaro.org/qa/test-definitions.git",
+                        "testdef": "ubuntu/smoke-tests-basic.yaml"
+                    },
+                    {
+                        "git-repo": "http://git.linaro.org/git/lava-team/lava-functional-tests.git",
+                        "testdef": "lava-test-shell/multi-node/multinode02.yaml"
+                    }
+                ],
+                "timeout": 900
+            }
+        }
+    ],
+    "health_check": false,
+    "job_name": "bootloader-lava-test-shell-multinode",
+    "logging_level": "DEBUG",
+    "target": "beaglebone_2",
+    "timeout": 900
+}

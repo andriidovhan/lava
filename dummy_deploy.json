@@ -1,0 +1,142 @@
+{
+    "actions": [
+        {
+            "command": "dummy_deploy",
+            "parameters": {
+                "target_type": "ubuntu"
+            }
+        },
+        {
+            "command": "lava_test_shell",
+            "parameters": {
+                "testdef_repos": [
+                    {
+                        "git-repo": "git://github.com/andriidovhan/lava.git",
+                        "testdef": "job-definitions/standard-armmp-nfs-bbb.yaml"
+                    }
+                ],
+                "timeout": 1900
+            }
+        },
+        {
+            "command": "submit_results",
+            "parameters": {
+                "server": "http://linara-user1@172.28.118.67/RPC2/",
+                "stream": "/anonymous/linara-user1/"
+            }
+        }
+    ],
+    "health_check": false,
+    "job_name": "beagle test ad",
+    "logging_level": "DEBUG",
+    "target": "beaglebone_2",
+    "timeout": 1900
+}
+
+===============================================================================
+{
+    "actions": [
+        {
+            "command": "dummy_deploy",
+            "parameters": {
+                "target_type": "ubuntu"
+            }
+        },
+        {
+            "command": "lava_test_shell",
+            "parameters": {
+                "testdef_repos": [
+                    {
+                        "git-repo": "git://github.com/andriidovhan/lava.git",
+                        "testdef": "job-definitions/passfail.yaml"
+                    }
+                ],
+                "timeout": 1900
+            }
+        },
+        {
+            "command": "submit_results",
+            "parameters": {
+                "server": "http://172.28.118.63/RPC2/",
+                "stream": "/anonymous/linara-user1/"
+            }
+        }
+    ],
+    "health_check": false,
+    "job_name": "beagle test ad",
+    "logging_level": "DEBUG",
+    "target": "beaglebone_2",
+    "timeout": 1900
+}
+
+=======================================================================================
+{
+    "actions": [
+        {
+            "command": "dummy_deploy",
+            "parameters": {
+                "target_type": "ubuntu"
+            }
+        },
+        {
+            "command": "lava_test_shell",
+            "parameters": {
+                "testdef_repos": [
+                    {
+                        "git-repo": "git://github.com/andriidovhan/lava.git",
+                        "testdef": "job-definitions/passfail.yaml"
+                    }
+                ],
+                "timeout": 1900
+            }
+        },
+        {
+            "command": "submit_results",
+            "parameters": {
+                "server": "http://172.28.118.63/RPC2/",
+                "stream": "/anonymous/linara-user1/"
+            }
+        }
+    ],
+    "health_check": false,
+    "job_name": "beagle test ad",
+    "logging_level": "DEBUG",
+    "login_prompt": "beaglebone login:",
+    "password": "linaro",
+    "password_prompt": "Password",
+    "target": "beaglebone_2",
+    "target_type": "ubuntu",
+    "timeout": 1900,
+    "username": "root"
+}
+
+
+
+==========================
+{
+    "interrupt_char": " ",
+    "interrupt_prompt": "Press SPACE to abort autoboot in 2 seconds",
+    "send_char": true,
+    "sendcontrol": "MMM",
+ 
+}
+
+"Linux beaglebone 4.9.78-ti-r94 #1 SMP PREEMPT Fri Jan 26 21:26:24 UTC 2018 armv7l GNU/Linux"
+
+
+
+{boot_cmds_tftp =
+    setenv autoload no,
+    setenv usbethaddr 00:40:5c:26:0a:5b,
+    setenv pxefile_addr_r "'0x50000000'",
+    setenv kernel_addr_r "'0x40007000'",
+    setenv initrd_addr_r "'0x42000000'",
+    setenv fdt_addr_r "'0x41f00000'",
+    setenv loadkernel "'tftp ${kernel_addr_r} ${lava_kernel}'",
+    setenv loadinitrd "'tftp ${initrd_addr_r} ${lava_ramdisk}; setenv initrd_size ${filesize}'",
+    setenv loadfdt "'tftp ${fdt_addr_r} ${lava_dtb}'",
+    setenv bootargs "'root=/dev/ram0 console=ttySAC2,115200n8 init --no-log ip=:::::eth0:dhcp'",
+    setenv bootcmd "'usb start; dhcp; setenv serverip ${lava_server_ip}; run loadkernel; run loadinitrd; run loadfdt; bootm ${kernel_addr_r} ${initrd_addr_r} ${fdt_addr_r}'",
+    boot
+}
+

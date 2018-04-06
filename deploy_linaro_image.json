@@ -1,0 +1,21 @@
+{
+    "actions": [
+        {
+            "command": "deploy_linaro_image",
+            "parameters": {
+                "image": "http://images.validation.linaro.org/kvm-debian-wheezy.img.gz"
+            }
+        },
+        {
+            "command": "submit_results",
+            "parameters": {
+                "server": "http://linara-user1@172.28.118.67/RPC2",
+                "stream": "/anonymous/test-new/"
+            }
+        }
+    ],
+    "job_name": "test-ui-for-beaglebone_type_UI is unavailable.",
+    "logging_level": "DEBUG",
+    "target": "beaglebone_2",
+    "timeout": 18000
+}

@@ -1,0 +1,27 @@
+{
+    "actions": [
+        {
+            "command": "deploy_linaro_kernel",
+            "parameters": {
+                "kernel": "http://images.validation.linaro.org/functional-test-images/ifc6410/zImage_ifc6410",
+                "rootfs": "http://images.validation.linaro.org/functional-test-images/ifc6410/linaro-trusty-developer-ifc6410.img.gz",
+                "target_type": "ubuntu"
+            }
+        },
+        {
+            "command": "boot_linaro_image"
+        },
+        {
+            "command": "submit_results",
+            "parameters": {
+                "server": "http://172.28.118.63/RPC2/",
+                "stream": "/anonymous/linara-user1/"
+            }
+        }
+    ],
+    "health_check": false,
+    "job_name": "bootloader-lava-test-shell-multinode",
+    "logging_level": "DEBUG",
+    "target": "beaglebone_2",
+    "timeout": 900
+}
