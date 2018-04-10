@@ -11,7 +11,7 @@ run:
     - "lava-test-case passtest --result pass"
     - "lava-test-case failtest --result pass"
     - echo "print pwd"
-    - lava-test-case test-ls-command --shell(pwd)
+    - lava-test-case test-ls-command --shell $(pwd)
     - echo "print whoami"
     - echo `whoami`
     - echo "custom-script-1"
