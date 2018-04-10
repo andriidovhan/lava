@@ -12,14 +12,18 @@ run:
     - "lava-test-case failtest --result pass"
     - echo "custom-script-1"
     - lava-test-case test-custom-script-1 --shell realpath ./scripts/test.sh
-    - echo "custom-script-2"
-    - lava-test-case test-custom-script-2 --shell scripts/test.sh
-    - echo "custom-script-3"
-    - ./scripts/test.sh
-    - echo "custom-script-4"   
-    - scripts/test.sh
 
 
+
+
+
+
+#    - echo "custom-script-2"
+#    - lava-test-case test-custom-script-2 --shell scripts/test.sh
+#    - echo "custom-script-3"
+#    - ./scripts/test.sh
+#    - echo "custom-script-4"   
+#    - scripts/test.sh
 
 #
 #metadata:
