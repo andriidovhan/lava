@@ -12,7 +12,7 @@ run:
     - "lava-test-case failtest --result pass"
     - lava-test-case test-ls-command --shell ls $(pwd)
     - echo `whoami`
-    - --shell scripts/test.sh
+    - lava-test-case test-custom-script --shell .scripts/test.sh
 
 
 
