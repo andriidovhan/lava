@@ -1,23 +1,36 @@
---
-
-metadata:
-  name: passfail
-  format: "Lava-Test-Shell Test Definition 1.0"
+---
+metadata: 
   description: "Pass/Fail test."
+  format: "Lava-Test-Shell Test Definition 1.0"
+  name: passfail
   version: 1.0
-#- boot:
-#    auto_login:
-#      login_prompt: "beaglebone login:"
-#      username: "root"
-#    prompts:
-#    - "root@beaglebone:~#"
-
-run:
-  steps:
+parse: 
+  pattern: "(?P<test_case_id>.*-*):\\s+(?P<result>(pass|fail))"
+run: 
+  steps: 
     - ./test.sh
 
-parse:
-  pattern: '(?P<test_case_id>.*-*)\s+:\s+(?P<result>(Sample|samp))'
-    fixupdict:
-      Sample: pass
-      samp: fail
+
+
+#
+#metadata:
+#  name: passfail
+#  format: "Lava-Test-Shell Test Definition 1.0"
+#  description: "Pass/Fail test."
+#  version: 1.0
+##- boot:
+##    auto_login:
+##      login_prompt: "beaglebone login:"
+##      username: "root"
+##    prompts:
+##    - "root@beaglebone:~#"
+#
+#run:
+#  steps:
+#    - ./test.sh
+#
+#parse:
+#  pattern: '(?P<test_case_id>.*-*)\s+:\s+(?P<result>(Sample|samp))'
+#    fixupdict:
+#      Sample: pass
+#      samp: fail
