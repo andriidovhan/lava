@@ -10,9 +10,18 @@ run:
   steps: 
     - "lava-test-case passtest --result pass"
     - "lava-test-case failtest --result pass"
-    - lava-test-case test-ls-command --shell ls $(pwd)
+    - echo "print pwd"
+    - lava-test-case test-ls-command --shell(pwd)
+    - echo "print whoami"
     - echo `whoami`
-    - lava-test-case test-custom-script --shell ./scripts/test.sh
+    - echo "custom-script-1"
+    - lava-test-case test-custom-script-1 --shell ./scripts/test.sh
+    - echo "custom-script-2"
+    - lava-test-case test-custom-script-2 --shell scripts/test.sh
+    - echo "custom-script-3"
+    - ./scripts/test.sh
+    - echo "custom-script-4"   
+    - scripts/test.sh
 
 
 
