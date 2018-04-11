@@ -12,7 +12,6 @@ while read line; do
         result="$(echo "${line}" | awk '{print $2}')"
         measurement="$(echo "${line}" | awk '{print $3}')"
         units="$(echo "${line}" | awk '{print $4}')"
-        #lava-test-case "${test}" --result "${result}" --measurement "${measurement}" --units "${units}"
-        lava-test-case "${test}" --result "${result}" #--measurement "${measurement}" --units "${units}"
+        lava-test-case "${test}" --result "${result}" --measurement "${measurement}" --units "${units}"
     fi
 done < "${RESULT_FILE}"
