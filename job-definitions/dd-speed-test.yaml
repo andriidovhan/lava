@@ -16,6 +16,8 @@ params:
 
 run:
     steps:
+        - "echo content > file.txt"
         #- lava-test-case test-dd-speed --shell realpath ./scripts/dd-speed-test.sh -p "${PARTITION}" -t "${FS_TYPE}" -i "${ITERATION}"
         - $(./scripts/dd-speed-test.sh -p "${PARTITION}" -t "${FS_TYPE}" -i "${ITERATION}")
+        - "lava-test-case-attach test-attach file.txt text/plain"
         - lava-test-case test-send-to-lava --shell realpath ./scripts/send-to-lava.sh "result.txt"
