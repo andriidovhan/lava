@@ -100,7 +100,8 @@ dd_write() {
         echo "Running iteration ${i}..."
         rm -f dd.img
         echo 3 > /proc/sys/vm/drop_caches
-        dd if=/dev/zero of=dd.img bs=1048576 count=1024 conv=fsync 2>&1 \
+        #dd if=/dev/zero of=dd.img bs=1048576 count=1024 conv=fsync 2>&1 \
+        dd if=/dev/zero of=dd.img bs=10 count=10 conv=fsync 2>&1 \
             | tee  -a "${WD}"/dd-write-output.txt
     done
 }
