@@ -23,3 +23,74 @@
     "target": "beaglebone_2",
     "timeout": 900
 }
+
+
+=====================================================================
+{
+    "actions": [
+    {
+        "command": "deploy_linaro_kernel",
+        "parameters":
+        {
+            "kernel": "http://images.validation.linaro.org/functional-test-images/bbb/zImage"
+        }
+    },
+    {
+        "command": "boot_linaro_image",
+        "parameters":
+        {
+            "boot_cmds": [
+                "setenv autoload no",
+                "boot"
+            ]
+        }
+    },
+    {
+        "command": "lava_test_shell",
+        "parameters":
+        {
+            "testdef_repos": [
+            {
+                "git-repo": "git://github.com/andriidovhan/lava.git",
+                "testdef": "job-definitions/smoke-test-basic.yaml"
+            }],
+            "timeout": 2400
+        }
+    },
+    {
+        "command": "lava_test_shell",
+        "parameters":
+        {
+            "testdef_repos": [
+            {
+                "git-repo": "git://github.com/andriidovhan/lava.git",
+                "testdef": "job-definitions/passfail.yaml"
+            }],
+            "timeout": 2400
+        }
+    },
+    {
+        "command": "lava_test_shell",
+        "parameters":
+        {
+            "testdef_repos": [
+            {
+                "git-repo": "git://github.com/andriidovhan/lava.git",
+                "testdef": "job-definitions/dd-speed-test.yaml"
+            }],
+            "timeout": 2400
+        }
+    },
+    {
+        "command": "submit_results_on_host",
+        "parameters":
+        {
+            "server": "http://linara-user1@172.28.118.67/RPC2/",
+            "stream": "/anonymous/linara-user1/"
+        }
+    }],
+    "job_name": "bootloader-lava-test-shell-multinode",
+    "logging_level": "DEBUG",
+    "target": "beaglebone_2",
+    "timeout": 900
+}
