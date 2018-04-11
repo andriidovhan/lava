@@ -1,0 +1,14 @@
+metadata:
+    name: dt-selftests
+    format: "Lava-Test-Shell Test Definition 1.0"
+    description: "Device Tree Runtime self tests for Linaro Ubuntu & OpenEmbedded builds. Kernel config
+                  required for this tests CONFIG_OF_SELFTEST=y or CONFIG_OF_UNITTEST=y"
+
+run:
+    steps:
+        - "./common/scripts/dt-selftests.sh"
+parse:
+    pattern: "^test_case_id:(?P<test_case_id>.*-*.+) measurement:(?P<measurement>.+) result:(?P<result>\\w+)"
+    fixupdict:
+          passed: pass
+          failed: fail
