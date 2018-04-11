@@ -101,7 +101,7 @@ dd_write() {
         rm -f dd.img
         echo 3 > /proc/sys/vm/drop_caches
         #dd if=/dev/zero of=dd.img bs=1048576 count=1024 conv=fsync 2>&1 \
-        dd if=/dev/zero of=dd.img bs=10 count=10 conv=fsync 2>&1 \
+        dd if=/dev/zero of=dd.img bs=1000 count=50000 conv=fsync 2>&1 \
             | tee  -a "${WD}"/dd-write-output.txt
     done
 }
@@ -113,7 +113,8 @@ dd_read() {
     for i in $(seq "${ITERATION}"); do
         echo "Running iteration ${i}..."
         echo 3 > /proc/sys/vm/drop_caches
-        dd if=dd.img of=/dev/null bs=1048576 count=1024 2>&1 \
+        #dd if=dd.img of=/dev/null bs=1048576 count=1024 2>&1 \
+        dd if=dd.img of=/dev/null bs=1000 count=50000 2>&1 \
             | tee -a "${WD}"/dd-read-output.txt
     done
     rm -f dd.img
