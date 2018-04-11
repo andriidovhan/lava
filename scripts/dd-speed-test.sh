@@ -20,7 +20,7 @@
 #
 # Author: Chase Qi <chase.qi@linaro.org>
 
-. ./common/scripts/include/sh-test-lib
+. ./scripts/include/sh-test-lib
 LANG=C
 export LANG
 WD="$(pwd)"
