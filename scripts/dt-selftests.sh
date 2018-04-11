@@ -1,5 +1,5 @@
 #!/bin/sh
-cd common/scripts
+cd scripts
 dmesg | awk -f dt-selftests.awk > dt-selftest-stdout.log
 NO_OF_PASS=`grep "DT-SELFTEST passed" dt-selftest-stdout.log | awk '{print $3}'`
 NO_OF_FAIL=`grep "DT-SELFTEST failed" dt-selftest-stdout.log | awk '{print $3}'`
