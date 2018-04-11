@@ -6,7 +6,7 @@ metadata:
 
 run:
     steps:
-        - "./common/scripts/dt-selftests.sh"
+        - "./scripts/dt-selftests.sh"
 parse:
     pattern: "^test_case_id:(?P<test_case_id>.*-*.+) measurement:(?P<measurement>.+) result:(?P<result>\\w+)"
     fixupdict:
