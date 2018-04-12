@@ -5,7 +5,7 @@ metadata:
 
 run:
     steps:
-        #- cd ./automated/linux/lmbench/
+        - cd ./lmbench/
         - ./lmbench-memory.sh
         - ./send-to-lava.sh ./output/result.txt
 
