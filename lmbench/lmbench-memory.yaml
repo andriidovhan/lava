@@ -1,0 +1,11 @@
+metadata:
+    format: Lava-Test Test Definition 1.0
+    name: lmbench-memory
+    description: "Run lmbench memory bandwidth and latency tests."
+
+run:
+    steps:
+        #- cd ./automated/linux/lmbench/
+        - ./lmbench-memory.sh
+        - ./send-to-lava.sh ./output/result.txt
+
