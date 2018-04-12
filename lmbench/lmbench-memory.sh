@@ -48,4 +48,7 @@ create_out_dir "${OUTPUT}"
 
 detect_abi
 bandwidth_test
+#change pass to fail in line where Cannot exist only
+sed -i '/Cannot/s/pass/fail/g' ${RESULT_FILE}
 latency_test
+
