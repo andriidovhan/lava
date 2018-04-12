@@ -13,7 +13,6 @@ bandwidth_test() {
         #./bin/"${abi}"/bw_mem 512m "$test" 2>&1 \
         #
         #mem size is decreased to 128
-        echo "/bin/$abi/bw_mem 128m $test"
         ./bin/"${abi}"/bw_mem 256m "$test" \
           | awk -v test_case="memory-${test}-bandwidth" \
             '{printf("%s pass %s MB/s\n", test_case, $2)}' \
